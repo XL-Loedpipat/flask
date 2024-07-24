@@ -1,26 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="utf-8">
-      <meta name="description" content="alphasec">
-      <meta name="author" content="alphasec">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>alphasec</title>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-      <link rel="stylesheet" href="static/css/styles.css">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:500&display=swap">
-      <link rel="icon" href="static/favicon.ico" type="image/x-icon">
-  </head>
-  <body>
-    <div class="row">
-      <h1 class="h1">alphasec</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extract Log</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <nav>
+        <label class="logo">Extract Log</label>
+        <ul>
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">Manual</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Extract Log</h1>
+        </header>
+        <main>
+            <form method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="input_folder">Input Folder:</label>
+                    <div class="form-data-input">
+                        <label for="Example_input_folder">Do not exceed 220 files</label>
+                    </div>
+                    <input type="file" id="input_folder" name="input_folder" webkitdirectory directory required><br><br>
+                </div>
+                <div class="form-group">
+                    <label for="file_name">Output File Name:</label>
+                    <input type="text" id="file_name" name="file_name" required>
+                </div>
+                <div class="form-data">
+                    <label for="Example_file_name">e.g. Extracted_Log ⮕ Extracted_Log.xlsx</label>
+                </div>
+                <button type="submit">Process Files</button>
+            </form>
+        </main>
     </div>
-    <div class="row">
-      <div>
-      </div>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    <div style="position: fixed; bottom: 10px; right: 10px; font-size: 12px; color: white;">
+        Version 0.0.1 By Loedpipat
     </div>
-    <div class="row">
-      <span class="text-muted small">alphasec © 2024. All rights reserved.</span>
-    </div>
-  </body>
+</body>
 </html>
